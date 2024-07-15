@@ -1,0 +1,110 @@
+/* Apply styles to the entire HTML document */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    background-color: #222; /* Example background color */
+    color: white; /* Text color */
+    font-family: Arial, sans-serif; /* Example font */
+  }
+  
+  /* Ensure the body takes up the full viewport */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Optional: Adjustments to the wrapper or other elements */
+  #wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Reset default margin and padding for all elements */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensure padding and border don't add to the element's dimensions */
+  }
+  
+  /* Style for content wrapper */
+  .content-wrapper {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflowing text */
+  }
+  
+  /* Style for animated text */
+  .animated-text {
+    display: inline-block;
+    position: relative;
+    font-size: 48px; /* Increase font size */
+    white-space: nowrap; /* Prevent wrapping of text */
+    animation: moveText 6s ease-in-out infinite; /* Animation properties */
+  }
+  
+  @keyframes moveText {
+    0%, 100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  
+  /* Style for arrow link */
+  .arrow-link {
+    display: block;
+    text-decoration: none;
+    margin-top: 20px; /* Example margin */
+    opacity: 0; /* Initially hide the arrow */
+    animation: fadeInOut 6s ease-in-out infinite; /* Animation properties */
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  
+  /* Style for arrow SVG */
+  .arrow-link svg {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the arrow horizontally */
+  }
+  
+  .arrow-link svg path {
+    stroke: white; /* Stroke color for the arrow */
+    stroke-width: 3; /* Stroke width */
+    stroke-linecap: round; /* Rounded stroke cap */
+    stroke-linejoin: round; /* Rounded stroke join */
+  }
+  
+  .arrow-link:hover svg {
+    transform: translateY(-3px); /* Example: Move arrow up on hover */
+  }
+  @media (prefers-color-scheme: dark) {
+    /* Dark mode styles */
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+}
+
+  
